@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Job Website</title>
+	<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  *
+{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.menu-bar
+{
+    background-image: linear-gradient(to right,#6db9ef,#7ce08a);
+}
+.nav-link
+{
+    font-size: 16px;
+    color: #fff !important;
+    margin: 2px;
+}
+.navbar-nav
+{
+    text-align: right;
+}
+.menu-bar .navbar-toggler
+{
+    padding-right: 0;
+    outline: none;
+    border: none;
+}
+.banner
+{
+    height: 80vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(bg1.jpg);
+    background-size: cover;
+    color: #fff;
+}
+.banner h1
+{
+    padding-top: 170px;
+    font-size: 50px;
+    letter-spacing: 6px;
+    font-weight: 600;
+    text-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+.search-job
+{
+    padding: 30px 0;
+    margin: -50px 6% 50px;
+    background-image: linear-gradient(to right, #6db9ef, #7ce08a);
+}
+.search-job .form-control
+{
+    max-width: 250px;
+    display: inline-flex;
+    margin: 10px 5px;
+    border-radius: 0;
+    box-shadow: none !important;
+    border: none;
+}
+.search-job .btn-primary
+{
+    border-radius: 0;
+    box-shadow: none !important;
+    border: none;
+    display: inline-flex;
+    margin: 5px;
+    padding: 5px 20px;
+}
+
+/------------TOP recruiters-------------/
+#recruiters
+{
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+#recruiters h3
+{
+    text-align: center;
+    padding-bottom: 40px;
+}
+h3::before
+{
+    content: '';
+    background-image: linear-gradient(to right, #6db9ef, #7ce08a);
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    z-index: -10;
+    margin-top: -15px;
+    border-top-left-radius: 70px;
+    border-bottom-right-radius: 90px;
+
+}
+#recruiters img
+{
+    max-width: 100px;
+    margin: 10px 20px;
+}
+
+/---------------recent jobs------------/
+#jobs
+{
+    background: #f8f8fa;
+    padding: 50px 0;
+}
+.company-details
+{
+    box-shadow: 0 2px 70px 0 rgba(110,130,208, .18);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.job-update
+{
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.job-update .fa
+{
+    margin-top: 5px;
+    margin-right: 10px;
+    color: #77d1b1;
+
+}
+.job-update small
+{
+    background: #efefef;
+    padding: 1px 5px;
+    margin: 0 5px;
+}
+.job-update p
+{
+    margin-bottom: 0; !important;
+}
+.job-update a
+{
+    text-decoration: none !important;
+    color: #b6bed2;
+    float:right;
+}
+.apply-btn
+{
+    height: 40px;
+    background-image: linear-gradient(to right, #6db9ef, #7ce08a);
+    padding: 7px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.apply-btn .btn-primary
+{
+    padding: 0 30px;
+    float: right;
+    border-radius: 0;
+    box-shadow: none; !important;
+    background: transparent;
+    border: 1px solid #fff;
+}
+.page-link li
+{
+    height: 25px;
+    width: 25px;
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+
+}
+.pagelink li:hover, .active
+{
+    color: #fff;
+    background-image: linear-gradient(to right, #6db9ef, #7ce08a);
+}
+.left-arrow
+{
+    color: #999;
+}
+.right-arrow
+{
+    color: #29b929;
+}
+/------------------site-stats-------------/
+#site-stats
+{
+    padding: 100px 0;
+}
+#site-stats h3
+{
+    margin-bottom: 30px;
+
+}
+.footer{
+ background-image: linear-gradient(to right, #6db9ef, #7ce08a);}
+  
+  
+  </style>
+
+</head>
+<body>
+<!--------header------>
+<section id="header">
+	<div class="menu-bar">
+		<nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src="LOGO1.JPG" width="100" height="50"></a>
+	   
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#jobs">ALL JOBS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#recruiters">COMPANIES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#jobs">WALK-IN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">GOVT. JOBS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">INTERNSHIP</a>
+        </li>
+      </ul>
+    </div>
+  
+</nav>
+	</div>
+	
+    <div class="banner text-center">
+        <h1>JOBS AROUND YOU</h1>
+        <p>"The future depends on what you do today"-- by Mahatma Gandhi</p>
+    </div>
+</section>
+<div class="search-job text-center">
+    <input type="text" class="form-control" placeholder="search keyword">
+    <input type="text" class="form-control" placeholder="company">
+    <input type="text" class="form-control" placeholder="location">
+    <input type="button" class="btn btn-primary" value="Find job">
+</div>
+<!---------------------top recruiters------------------>
+
+<section id="recruiters">
+    <div class="container text-center">
+        <h3>TOP RECRUITERS</h3>
+        <div>
+            <img src="Dell.jpeg">
+            <img src="https://download.logo.wine/logo/Oracle_Corporation/Oracle_Corporation-Logo.wine.png">
+            <img src="cisco.jpeg">
+            <img src="netflix.jpeg">
+            <img src="amazon.jpeg">
+             </div>
+             <div>
+                <img src="Infosys.jpeg">
+            <img src="BYJUS.jpeg">
+            <img src="indeed.jpeg">
+            <img src="TNW.jpeg">
+            <img src="IBM.jpeg">
+
+             </div>
+             <div>
+              <img src="adobe.jpeg">
+              <img src="IDC.jpeg">
+              <img src="Fedex.jpeg">
+              <img src="https://marcas-logos.net/wp-content/uploads/2020/03/WALMART-LOGO.png">
+              <img src="Forbes.jpeg">
+  
+             </div>
+    </div>
+</section>
+
+<!-----------------recent jobs-------------->
+<section id="jobs">
+  <div class="container">
+    <h5>RECENT UPDATES</h5>
+    <div class="company-details">
+      <div class="job-update">
+        <h4><b>seasoned junior python developer (fresher)</b></h4>
+        <p>XYZ solution pvt ltd</p>
+        <i class="fa fa-briefcase"></i><span>0-1 yrs</span><br>
+        <i class="fa fa-inr"></i><span> 3.50 - 4.00 Lacs p. a.</span><br>
+        <i class="fa fa-map-marker"></i><span> banglore</span><br>
+        <p>Skills <i class="fa fa-angle-double-right"></i><small>java</small><small>python</small><small>HTML,CSS</small><small>.Net</small></p>
+        <p>Description <i class="fa fa-angle-double-right"></i> subscribe easy tutorials youtube channel to watch more videos on web designing and digital marketing. <a href="#">Read more</a></p>
+
+      </div>
+      <div class="apply-btn">
+        <button type="button" class="btn btn-primary">Apply</button>
+      </div>
+    </div>
+    <div class="company-details">
+      <div class="job-update">
+        <h4><b>seasoned senior python developer (fresher)</b></h4>
+        <p>XYZ solution pvt ltd</p>
+        <i class="fa fa-briefcase"></i><span>0-1 yrs</span><br>
+        <i class="fa fa-inr"></i><span> 3.50 - 4.00 Lacs p. a.</span><br>
+        <i class="fa fa-map-marker"></i><span> banglore</span><br>
+        <p>Skills <i class="fa fa-angle-double-right"></i><small>java</small><small>python</small><small>HTML,CSS</small><small>.Net</small></p>
+        <p>Description <i class="fa fa-angle-double-right"></i> subscribe easy tutorials youtube channel to watch more videos on web designing and digital marketing. <a href="#">Read more</a></p>
+
+      </div>
+      <div class="apply-btn">
+        <button type="button" class="btn btn-primary">Apply</button>
+      </div>
+    </div>
+    <div class="company-details">
+      <div class="job-update">
+        <h4><b>seasoned junior python developer (fresher)</b></h4>
+        <p>XYZ solution pvt ltd</p>
+        <i class="fa fa-briefcase"></i><span>0-1 yrs</span><br>
+        <i class="fa fa-inr"></i><span> 3.50 - 4.00 Lacs p. a.</span><br>
+        <i class="fa fa-map-marker"></i><span> banglore</span><br>
+        <p>Skills <i class="fa fa-angle-double-right"></i><small>java</small><small>python</small><small>HTML,CSS</small><small>.Net</small></p>
+        <p>Description <i class="fa fa-angle-double-right"></i> subscribe easy tutorials youtube channel to watch more videos on web designing and digital marketing. <a href="#">Read more</a></p>
+
+      </div>
+      <div class="apply-btn">
+        <button type="button" class="btn btn-primary">Apply</button>
+      </div>
+    </div>
+    <div class="company-details">
+      <div class="job-update">
+        <h4><b>seasoned senior python developer (fresher)</b></h4>
+        <p>XYZ solution pvt ltd</p>
+        <i class="fa fa-briefcase"></i><span>0-1 yrs</span><br>
+        <i class="fa fa-inr"></i><span> 3.50 - 4.00 Lacs p. a.</span><br>
+        <i class="fa fa-map-marker"></i><span> banglore</span><br>
+        <p>Skills <i class="fa fa-angle-double-right"></i><small>java</small><small>python</small><small>HTML,CSS</small><small>.Net</small></p>
+        <p>Description <i class="fa fa-angle-double-right"></i> subscribe easy tutorials youtube channel to watch more videos on web designing and digital marketing. <a href="#">Read more</a></p>
+
+      </div>
+      <div class="apply-btn">
+        <button type="button" class="btn btn-primary">Apply</button>
+      </div>
+
+        </div>
+        <ul class="page-link text-center">
+          <li class="left-arrow">&#8592;</li>
+          <li class="active">1</li>
+        
+        
+        <li>2</li>
+        
+        <li>4</li>
+        <li>5</li>
+        <li class="right-arrow">&#8594;</li>
+        </ul>
+      </div>
+      </section>
+      <!-------------------site stats--------->
+      <section id="site-stats">
+        <div class="container">
+          <div class="container text-center">
+          <h3>JOBCLUES SITE STATUS</h3>
+          <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-6">
+                <div class="stats-box">
+                  <i class="fa fa-user-o"></i><span><small>100k +</small></span>
+                  <p>JOB SEEKERS</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="stats-box">
+                  <i class="fa fa-slideshare"></i><span><small>500 +</small></span>
+                  <p>Employers</p>
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-6">
+                <div class="stats-box">
+                  <i class="fa fa-hand-peace-o"></i><span><small>10k +</small></span>
+                  <p>Active jobs</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="stats-box">
+                  <i class="fa fa-building-o"></i><span><small>400 +</small></span>
+                  <p>companies</p>
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+          </div>
+        </div>
+      </section>
+	  
+	  <div class="footer">
+	  <center>
+	  <h1>FIND JOBS ON MOBILE, DOWNLOAD JOBCLUE APP</h1>
+	  <img src="googleplay.jpeg">
+            <img src="appstore.jpeg"><br><br>
+			<h1> <a href="https://github.com/Ratnakar14"><i class="fab fa-github"></i></a>
+	  <a href="#"><i class="fab fa-discord"></i></a>
+        <a href="https://www.linkedin.com/in/ratnakar-nayak-897a61187/"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/mr.rkn0804"><i class="fab fa-instagram"></i></a></h1>
+	  </center>
+	  </div>
+      </body>
+      </html>
